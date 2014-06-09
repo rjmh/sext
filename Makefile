@@ -29,7 +29,8 @@ all: compile
 compile:
 	./rebar get-deps compile
 
-eqci: compile
+eqci:
+	erlc -o ebin +"{parse_transform,eqc_cover}" src/*
 	erlc -DEQC -o ebin test/*.erl
 
 clean:
