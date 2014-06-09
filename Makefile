@@ -20,15 +20,17 @@
 ## FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 ## DEALINGS IN THE SOFTWARE.
 
-.PHONY: all compile clean eunit test eqc doc
+.PHONY: all compile clean eunit test eqc doc eqci
 
 DIRS=src 
 
 all: compile
 
 compile:
-	./rebar compile
+	./rebar get-deps compile
 
+eqci: compile
+	erlc -DEQC -o ebin test/*.erl
 
 clean:
 	./rebar clean

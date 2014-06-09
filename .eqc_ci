@@ -1,2 +1,2 @@
-{build,"make"}.
-{test_path,"test"}.
+{build,"make eqci"}.
+{test_path,"ebin"}.
