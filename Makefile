@@ -31,7 +31,7 @@ compile:
 
 eqci: compile
 	erlc -o ebin +"{parse_transform,eqc_cover}" src/*.erl
-	erlc -DEQC -o ebin  +"{parse_transform,eqc_cover}" test/*.erl
+	erlc -DEQC -o ebin test/*.erl
 
 clean:
 	./rebar clean
